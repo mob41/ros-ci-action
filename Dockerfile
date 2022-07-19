@@ -1,5 +1,7 @@
 # Container image that runs your code
+
 FROM osrf/ros:noetic-desktop-full-focal
+ARG PACKAGE_DIR
 
 COPY entrypoint.sh /entrypoint.sh
 
