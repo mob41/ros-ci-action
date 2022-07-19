@@ -12,7 +12,7 @@ runs:
       shell: bash
     - run: docker run ros-container
       shell: bash
-    - run: docker cp ${{ inputs.package-directory }} ros-container:/ws/src
+    - run: docker cp ${{ inputs.package-directory }}/. ros-container:/ws/src/
       shell: bash
     - run: docker run ros-container
       shell: bash
