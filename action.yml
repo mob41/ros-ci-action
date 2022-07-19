@@ -1,9 +1,14 @@
 name: 'ROS CI'
 description: 'ROS Continuous Integration'
+inputs:
+  package-directory:
+    description: 'Package directory'
+    required: true
+    default: ''
 runs:
   using: 'composite'
   steps:
-    - run: docker build --tag ros-container $GITHUB_ACTION_PATH/.
+    - run: PACKAGE_DIR=${{ inputs.package-directory }} docker build --tag ros-container $GITHUB_ACTION_PATH/.
       shell: bash
     - run: docker run ros-container
       shell: bash
