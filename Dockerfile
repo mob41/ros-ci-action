@@ -6,7 +6,7 @@ ARG PACKAGE_DIR
 COPY entrypoint.sh /entrypoint.sh
 
 RUN mkdir -p /ws/src/package
-COPY $PACKAGE_DIR /ws/src/
+ADD $PACKAGE_DIR /ws/src/
 
 RUN chmod +x entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
