@@ -1,0 +1,6 @@
+name: 'ROS CI'
+description: 'ROS Continuous Integration'
+runs:
+  # TODO:use composite or nodejs action to deal with other version of ROS
+  using: 'docker'
+  image: 'Dockerfile'
