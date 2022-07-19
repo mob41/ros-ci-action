@@ -1,8 +1,8 @@
 # Container image that runs your code
 
 FROM osrf/ros:noetic-desktop-full-focal
-ARG PACKAGE_DIR
 
+ARG GITHUB_ACTION_PATH
 COPY $GITHUB_ACTION_PATH/entrypoint.sh /entrypoint.sh
 
 RUN mkdir -p /ws/src/package
