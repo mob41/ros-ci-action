@@ -8,7 +8,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: docker build --tag ros-container --build-arg PACKAGE_DIR=${{ inputs.package-directory }} $GITHUB_ACTION_PATH/.
+    - run: docker build --tag ros-container $GITHUB_ACTION_PATH/.
+      shell: bash
+    - run: docker cp ${{ inputs.package-directory }} ros-container:/ws/src/
       shell: bash
     - run: docker run ros-container
       shell: bash
